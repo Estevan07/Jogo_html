@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incrementar Valor Numérico</title>
+</head>
+<style>
+.pontuacao{
+    right: 0;
+    height: 50px;
+}
+</style>
+<body>
+    <div class="pontuacao">00000</div>
+
+    <script>
+        // Função para incrementar o valor numérico
+        function incrementarValorNumerico() {
+            // Seleciona o elemento com a classe 'pontuacao'
+            var elemento = document.querySelector('.pontuacao');
+
+            // Obtém o valor atual do elemento como uma string
+            var valorAtual = elemento.textContent;
+
+            // Converte o valor atual para um número inteiro
+            var numero = parseInt(valorAtual);
+
+            // Incrementa o número em 1
+            numero++;
+
+            // Formata o número para ter 5 dígitos com zeros à esquerda
+            var novoValor = numero.toString().padStart(5, '0');
+
+            // Define o novo valor no elemento
+            elemento.textContent = novoValor;
+        }
+
+        // Chama a função de incremento a cada segundo
+        setInterval(incrementarValorNumerico, 1000);
+    </script>
+</body>
+</html>
